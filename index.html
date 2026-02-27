@@ -45,6 +45,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Schema Markup (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -86,7 +89,10 @@
     }
     </script>
 </head>
-<body class="antialiased text-gray-800 bg-slate-50">
+<body class="antialiased text-gray-800 bg-slate-50 relative">
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
 
     <!-- Top Bar -->
     <div class="bg-primary text-white text-sm py-2 px-4 shadow-md sticky top-0 z-50">
@@ -127,14 +133,21 @@
                 <a href="#reviews" class="text-gray-700 hover:text-primary transition">Reviews</a>
             </nav>
 
-            <a href="#contact" class="hidden md:inline-flex btn-primary px-6 py-2.5 rounded-full font-semibold items-center">
-                Book Service <i class="fas fa-arrow-right ml-2 text-sm"></i>
-            </a>
+            <div class="flex items-center space-x-4">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="text-xl text-primary hover:text-secondary transition focus:outline-none">
+                    <i class="fas fa-moon"></i>
+                </button>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-2xl text-primary focus:outline-none">
-                <i class="fas fa-bars"></i>
-            </button>
+                <a href="#contact" class="hidden md:inline-flex btn-primary magnetic px-6 py-2.5 rounded-full font-semibold items-center">
+                    Book Service <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-2xl text-primary focus:outline-none ml-2">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Menu Panel -->
@@ -172,22 +185,22 @@
                         <span><i class="fas fa-user-shield mr-2"></i> Trusted Technicians</span>
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="tel:+919032856601" class="btn-accent px-8 py-4 rounded-xl font-bold text-center text-lg flex items-center justify-center">
+                    <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="400">
+                        <a href="tel:+919032856601" class="btn-accent magnetic px-8 py-4 rounded-xl font-bold text-center text-lg flex items-center justify-center">
                             <i class="fas fa-phone-alt mr-3"></i> CALL NOW
                         </a>
-                        <a href="https://wa.me/919032856601" target="_blank" class="btn-whatsapp px-8 py-4 rounded-xl font-bold text-center text-lg flex items-center justify-center">
+                        <a href="https://wa.me/919032856601" target="_blank" class="btn-whatsapp magnetic px-8 py-4 rounded-xl font-bold text-center text-lg flex items-center justify-center">
                             <i class="fab fa-whatsapp mr-3 text-xl"></i> WhatsApp Now
                         </a>
                     </div>
-                    <div class="mt-6">
-                        <a href="#contact" class="text-white hover:text-yellow-300 transition font-medium underline flex items-center">
+                    <div class="mt-6" data-aos="fade-up" data-aos-delay="500">
+                        <a href="#contact" class="text-white hover:text-yellow-300 transition font-medium underline flex items-center w-fit">
                             <i class="far fa-calendar-alt mr-2"></i> Book Online Appointment
                         </a>
                     </div>
                 </div>
                 
-                <div class="fade-in-up delay-200 hidden md:block">
+                <div class="hidden md:block" data-aos="zoom-in" data-aos-delay="200">
                     <div class="relative w-full max-w-md mx-auto aspect-square rounded-full flex items-center justify-center overflow-hidden border-4 border-white/20 shadow-2xl p-2 bg-white/10 backdrop-blur-sm">
                         <div class="absolute inset-0 bg-gradient-to-tr from-secondary/40 to-transparent animate-pulse z-0"></div>
                         <img src="https://www.rotraders.com/wp-content/uploads/2024/09/RO-Water-Purifier-Service-in-Hyderabad.jpg" alt="RO Water Purifier Service Visakhapatnam" class="w-full h-full object-cover rounded-full relative z-10 shadow-lg">
@@ -206,15 +219,15 @@
     <!-- Brands Services Cards -->
     <section id="services" class="py-20 relative bg-slate-50">
         <div class="container mx-auto max-w-7xl px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-5xl font-bold text-dark mb-4">Water Purifier Services & Repair</h2>
-                <div class="h-1.5 w-24 bg-accent mx-auto rounded-full mb-6"></div>
+                <div class="h-1.5 w-24 bg-accent mx-auto rounded-full mb-6" data-aos="scale-in" data-aos-delay="200"></div>
                 <p class="text-lg text-text-gray">Expert service for all major water purifier brands in Visakhapatnam. Professional technicians at your doorstep.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm service-card relative overflow-hidden group border border-gray-100 fade-in-up">
+                <div class="bg-white rounded-2xl p-8 shadow-sm service-card relative overflow-hidden group border border-gray-100" data-aos="fade-up" data-aos-delay="100">
                     <div class="absolute top-0 right-0 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-bl-lg">Most Popular</div>
                     <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-primary text-3xl mb-6 icon-wrapper">
                         <i class="fas fa-tint"></i>
@@ -232,7 +245,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm service-card relative overflow-hidden group border border-gray-100 fade-in-up delay-100">
+                <div class="bg-white rounded-2xl p-8 shadow-sm service-card relative overflow-hidden group border border-gray-100" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-primary text-3xl mb-6 icon-wrapper">
                         <i class="fas fa-water"></i>
                     </div>
@@ -574,44 +587,59 @@
             <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
                 <div class="grid lg:grid-cols-2">
                     
-                    <!-- Contact Info & Form -->
-                    <div class="p-8 md:p-12 lg:pr-16 fade-in-up">
-                        <h2 class="text-3xl font-bold text-dark mb-2">Book Service Now</h2>
-                        <p class="text-gray-500 mb-8">Fill the form or call us directly. We'll be there in 30 minutes!</p>
+                    <!-- Contact Info & Wizard Form -->
+                    <div class="p-8 md:p-12 lg:pr-16" data-aos="fade-right">
+                        <h2 class="text-3xl font-bold text-dark mb-2">Book Service Online</h2>
+                        <p class="text-gray-500 mb-8">Skip the call queue. Book instantly in 2 simple steps!</p>
                         
-                        <!-- Form Data -->
-                        <form id="quote-form" class="space-y-4 mb-10">
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                                    <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-gray-50" placeholder="John Doe">
+                        <!-- Multi-Step Wizard Data -->
+                        <form id="quote-form" class="mb-10 min-h-[250px] relative">
+                            
+                            <!-- Hidden input for brand -->
+                            <input type="hidden" id="brand-input" value="">
+
+                            <!-- Step 1: Brand Selection -->
+                            <div class="wizard-step active" id="step-1">
+                                <h4 class="font-bold text-dark mb-4 text-lg">Step 1: Select Your RO Brand</h4>
+                                <div class="brand-select-grid mb-6">
+                                    <div class="brand-item" data-brand="Aquaguard"><i class="fas fa-tint"></i> Aquaguard</div>
+                                    <div class="brand-item" data-brand="Kent"><i class="fas fa-water"></i> Kent</div>
+                                    <div class="brand-item" data-brand="AO Smith"><i class="fas fa-tools"></i> AO Smith</div>
+                                    <div class="brand-item" data-brand="Pureit"><i class="fas fa-shield-alt"></i> Pureit</div>
+                                    <div class="brand-item" data-brand="Havells"><i class="fas fa-wrench"></i> Havells</div>
+                                    <div class="brand-item" data-brand="Other"><i class="fas fa-cogs"></i> Other</div>
                                 </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                                    <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-gray-50" placeholder="+91 9032856601">
-                                </div>
+                                <button type="button" id="next-step-1" class="w-full btn-primary magnetic font-bold py-3.5 rounded-xl text-lg flex items-center justify-center">
+                                    Continue <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
                             </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Area in Vizag</label>
-                                    <input type="text" id="area" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-gray-50" placeholder="e.g. Akkayyapalem">
+
+                            <!-- Step 2: Contact Details -->
+                            <div class="wizard-step" id="step-2">
+                                <h4 class="font-bold text-dark mb-4 text-lg flex items-center cursor-pointer text-gray-500 hover:text-primary transition" id="prev-step-2">
+                                    <i class="fas fa-arrow-left mr-2"></i> Back
+                                </h4>
+                                <div class="space-y-4">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                            <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-gray-50" placeholder="John Doe">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                                            <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-gray-50" placeholder="+91 9032856601">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Area in Vizag</label>
+                                        <input type="text" id="area" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-gray-50" placeholder="e.g. Akkayyapalem">
+                                    </div>
                                 </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">RO Brand</label>
-                                    <select id="brand" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-gray-50">
-                                        <option>Aquaguard</option>
-                                        <option>Kent</option>
-                                        <option>AO Smith</option>
-                                        <option>Havells</option>
-                                        <option>Pureit</option>
-                                        <option>LG</option>
-                                        <option>Other / Not Sure</option>
-                                    </select>
-                                </div>
+                                <button type="submit" class="w-full btn-primary magnetic font-bold py-4 rounded-xl mt-6 text-lg relative overflow-hidden group">
+                                    <span class="relative z-10"><i class="fas fa-paper-plane mr-2"></i> Confirm Booking</span>
+                                    <div class="absolute inset-0 bg-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left z-0"></div>
+                                </button>
                             </div>
-                            <button type="submit" class="w-full btn-primary font-bold py-4 rounded-xl mt-4 text-lg">
-                                <i class="fas fa-paper-plane mr-2"></i> Get Free Quote
-                            </button>
                         </form>
 
                         <!-- Direct Contact Details -->
@@ -724,16 +752,20 @@
     </footer>
 
     <!-- Floating Mobile Actions -->
-    <a href="https://wa.me/919032856601" target="_blank" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/919032856601" target="_blank" class="floating-whatsapp magnetic" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
     
     <div class="sticky-call">
-        <a href="tel:+919032856601" class="w-full flex items-center justify-center">
-            <i class="fas fa-phone-alt mr-2 animate-bounce"></i> CALL FOR SERVICE: +91 9032856601
+        <a href="tel:+919032856601" class="w-full flex items-center justify-center font-bold">
+            <i class="fas fa-phone-alt mr-2 animate-bounce"></i> CALL TO FIX: +91 9032856601
         </a>
     </div>
 
+    <!-- External Animation Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    
     <!-- JS Scripts attached later -->
     <script src="assets/js/main.js"></script>
 </body>

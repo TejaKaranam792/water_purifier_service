@@ -30,38 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Handle Form Submission (Mock)
-  const quoteForm = document.getElementById('quote-form');
-  if (quoteForm) {
-    quoteForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Get values
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      const area = document.getElementById('area').value;
-      const brand = document.getElementById('brand').value;
-
-      // Simple validation
-      if (!name || !phone || !area) {
-        alert('Please fill in all required fields.');
-        return;
-      }
-
-      // Mock success
-      const btn = quoteForm.querySelector('button[type="submit"]');
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-check mr-2"></i> Booked Successfully!';
-      btn.classList.replace('btn-primary', 'bg-green-600');
-
-      setTimeout(() => {
-        quoteForm.reset();
-        btn.innerHTML = originalText;
-        btn.classList.replace('bg-green-600', 'btn-primary');
-      }, 3000);
-    });
-  }
-
   // Scroll Animations (Intersection Observer - now acting as fallback if AOS not loaded)
   const fadeElements = document.querySelectorAll('.fade-in-up');
   const observer = new IntersectionObserver((entries) => {
@@ -172,43 +140,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. Multi-Step Wizard Logic
-  const nextBtn1 = document.getElementById('next-step-1');
-  const prevBtn2 = document.getElementById('prev-step-2');
-  const brandItems = document.querySelectorAll('.brand-item');
-  let selectedBrandInput = document.getElementById('brand-input'); // hidden input
-
-  if (nextBtn1) {
-    // Handle Brand Selection Box Clicks
-    brandItems.forEach(item => {
-      item.addEventListener('click', () => {
-        // Remove selected from all
-        brandItems.forEach(b => b.classList.remove('selected'));
-        // Add to clicked
-        item.classList.add('selected');
-        // Set hidden input value
-        if (selectedBrandInput) {
-          selectedBrandInput.value = item.getAttribute('data-brand');
-        }
-      });
-    });
-
-    // Next Step
-    nextBtn1.addEventListener('click', () => {
-      if (!selectedBrandInput.value) {
-        alert("Please select a brand to continue.");
-        return;
-      }
-      document.getElementById('step-1').classList.remove('active');
-      document.getElementById('step-2').classList.add('active');
-    });
-
-    // Prev Step
-    if (prevBtn2) {
-      prevBtn2.addEventListener('click', () => {
-        document.getElementById('step-2').classList.remove('active');
-        document.getElementById('step-1').classList.add('active');
-      });
-    }
-  }
 });

@@ -176,4 +176,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 6. JavaScript Ripple Effect for Buttons
+  const rippleButtons = document.querySelectorAll('.js-ripple');
+  rippleButtons.forEach(btn => {
+    btn.addEventListener('mousedown', createRipple);
+    btn.addEventListener('touchstart', createRipple, { passive: true });
+  });
+
+  function createRipple(event) {
+    const button = event.currentTarget;
+    
+    // Remove existing ripples
+    const existingRipples = button.querySelectorAll('.ripple');
+    existingRipples.forEach(r => r.remove());
+
+    const circle = document.createElement('span');
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+
+    // Handle touch or mouse coordinates
+    let clientX, clientY;
+    if (event.type === 'touchstart') {
+      clientX = event.touches[0].clientX;
+      clientY = event.touches[0].clientY;
+    } else {
+      clientX = event.clientX;
+      clientY = event.clientY;
+    }
+
+    const rect = button.getBoundingClientRect();
+    
+    // Fallback if coordinates are weird (e.g. keyboard activation)
+    if (clientX === 0 && clientY === 0) {
+      clientX = rect.left + radius;
+      clientY = rect.top + radius;
+    }
+
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${clientX - rect.left - radius}px`;
+    circle.style.top = `${clientY - rect.top - radius}px`;
+    circle.classList.add('ripple');
+    
+    // Add dark ripple if specified
+    if (button.classList.contains('ripple-dark-bg')) {
+      circle.classList.add('ripple-dark');
+    }
+
+    button.appendChild(circle);
+
+    // Clean up
+    setTimeout(() => {
+      circle.remove();
+    }, 600);
+  }
 });

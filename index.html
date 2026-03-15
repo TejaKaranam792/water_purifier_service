@@ -879,18 +879,26 @@
     </a>
     
     <!-- Premium Mobile Sticky Footer -->
-    <div class="sticky-bottom-bar md:hidden z-40 bg-white">
-        <div class="grid grid-cols-2 divide-x divide-white/20 shadow-[0_-4px_20px_rgba(0,0,0,0.15)]">
-            <a href="tel:+919032856601" class="flex items-center justify-center gap-2 py-4 bg-primary text-white font-bold text-base ripple-effect active:bg-blue-800 transition">
-                <i class="fas fa-phone-alt animate-bounce"></i> 
-                <span>Call Now</span>
+    <nav class="sticky-bottom-bar md:hidden" aria-label="Mobile Action Bar">
+        <div class="flex justify-around items-center w-full px-2 gap-2">
+            <a href="tel:+919032856601" class="action-btn text-primary js-ripple flex-1 ripple-dark-bg" aria-label="Call Now">
+                <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-1 shadow-sm border border-blue-100">
+                    <i class="fas fa-phone-alt text-lg"></i> 
+                </div>
+                <span>Call Us</span>
             </a>
-            <a href="https://wa.me/919032856601" target="_blank" class="flex items-center justify-center gap-2 py-4 bg-[#25D366] text-white font-bold text-base ripple-effect active:bg-green-600 transition">
-                <i class="fab fa-whatsapp text-xl"></i> 
+            <a href="#contact" class="action-btn text-white bg-gradient-to-r from-primary to-blue-600 rounded-xl js-ripple flex-1 shadow-lg shadow-primary/30 transform -translate-y-4 py-3 border border-blue-400" aria-label="Book Service">
+                <i class="far fa-calendar-check text-xl mb-1"></i> 
+                <span class="mb-0.5">Book Now</span>
+            </a>
+            <a href="https://wa.me/919032856601" target="_blank" class="action-btn text-[#25D366] js-ripple flex-1 ripple-dark-bg" aria-label="WhatsApp Us">
+                <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center mb-1 shadow-sm border border-green-100">
+                    <i class="fab fa-whatsapp text-xl"></i> 
+                </div>
                 <span>WhatsApp</span>
             </a>
         </div>
-    </div>
+    </nav>
 
     <!-- External Animation Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

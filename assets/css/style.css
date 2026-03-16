@@ -733,8 +733,8 @@ h6,
     padding: 1.25rem 1.25rem 1.5rem;
   }
 
-  /* Calendly Widget Fit */
-  .calendly-inline-widget {
+  /* Booking Widget Fit */
+  .booking-iframe-container {
     min-width: 100% !important;
     width: 100% !important;
     overflow-x: hidden !important;
